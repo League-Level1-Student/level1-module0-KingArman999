@@ -22,7 +22,7 @@ public class BodyPartQuiz {
 	// place them in the default package, and change the names below.
 
 	String firstImage = "src/body_part_quiz/arnold.jpeg";
-	String secondImage = "src/body_part_quiz/leonardo.jpeg";
+	String secondImage = "src/body_part_quiz/devito.jpeg";
 	String thirdImage = "src/body_part_quiz/morgan.jpeg";
 	String fourthImage = "src/body_part_quiz/jack.jpeg";
 
@@ -51,21 +51,23 @@ public class BodyPartQuiz {
 	private void startQuiz() {
 
 		// 1. Make an int variable to hold the score.
-
-		// 2. Set the size of the window in the initializeGui() method 
-
+		int score = 0;
+		// 2. Set the size of the window in the initializeGui() method
+		window.setSize(1000,1000);
 		// 4. Ask the user who this person is and store their answer
-		String guess = JOptionPane.showInputDialog("who is this?");
-
+		String guess = JOptionPane.showInputDialog("Who is this?");
 		// 5. Check their answer. If they guessed correctly:
 		// -- Tell them they are right and increase the score by 1
-
 		// 6. Otherwise:
 		// -- Tell them they are wrong and who the person is
-
+		if(guess == "Arnold") {
+			JOptionPane.showMessageDialog(null, "You are correct!");
+			System.out.println(score + 1);
+		}else 
+			JOptionPane.showMessageDialog(null, "You are wrong!");
+			System.out.println();
 		// 7. Use the showNextImage() method below to get the next image
 		showNextImage();
-
 		// 8. .... repeat 4-7 for all your images.....
 
 		// 9. Show them their current score
