@@ -21,10 +21,10 @@ public class BodyPartQuiz {
 	// package,or if you prefer, get celebrity photos from the Internet,
 	// place them in the default package, and change the names below.
 
-	String firstImage = "src/body_part_quiz/arnold.jpeg";
-	String secondImage = "src/body_part_quiz/devito.jpeg";
-	String thirdImage = "src/body_part_quiz/morgan.jpeg";
-	String fourthImage = "src/body_part_quiz/jack.jpeg";
+	String firstImage = "src/_05_body_part_quiz/arnold.jpeg";
+	String secondImage = "src/_05_body_part_quiz/leonardo.jpeg";
+	String thirdImage = "src/_05_body_part_quiz/morgan.jpeg";
+	String fourthImage = "src/_05_body_part_quiz/jack.jpeg";
 
 	JFrame window = new JFrame();
 	JPanel panel = new JPanel();
@@ -53,23 +53,55 @@ public class BodyPartQuiz {
 		// 1. Make an int variable to hold the score.
 		int score = 0;
 		// 2. Set the size of the window in the initializeGui() method
-		window.setSize(1000,1000);
+
 		// 4. Ask the user who this person is and store their answer
-		String guess = JOptionPane.showInputDialog("Who is this?");
+
 		// 5. Check their answer. If they guessed correctly:
 		// -- Tell them they are right and increase the score by 1
 		// 6. Otherwise:
 		// -- Tell them they are wrong and who the person is
-		if(guess == "Arnold") {
-			JOptionPane.showMessageDialog(null, "You are correct!");
-			System.out.println(score + 1);
-		}else 
-			JOptionPane.showMessageDialog(null, "You are wrong!");
-			System.out.println();
-		// 7. Use the showNextImage() method below to get the next image
-		showNextImage();
-		// 8. .... repeat 4-7 for all your images.....
 
+		String q = JOptionPane.showInputDialog("Who is this?");
+		if (q.equals("Arnold")) {
+			JOptionPane.showMessageDialog(null, "You are correct!");
+			score+=1;
+		} else {
+			JOptionPane.showMessageDialog(null, "You are wrong!");
+			System.out.println("This is Arnold.");
+		}
+		showNextImage();
+		System.out.println("Your score is " + score);
+		// 7. Use the showNextImage() method below to get the next image
+		// 8. .... repeat 4-7 for all your images.....
+		String g = JOptionPane.showInputDialog("Who is this?");
+		if (g.contentEquals("Leonardo")) {
+			JOptionPane.showMessageDialog(null, "You are correct!");
+			score+=1;
+		} else {
+			JOptionPane.showMessageDialog(null, "You are wrong!");
+			System.out.println("This is Leonardo.");
+		}
+		showNextImage();
+		System.out.println("Your score is " + score);
+		String l = JOptionPane.showInputDialog("Who is this?");
+		if (l.contentEquals("Morgan")) {
+			JOptionPane.showMessageDialog(null, "You are correct!");
+			score+=1;
+		} else {
+			JOptionPane.showMessageDialog(null, "You are wrong!");
+			System.out.println("This is Morgan.");
+		}
+		showNextImage();
+		System.out.println("Your score is " + score);
+		String h = JOptionPane.showInputDialog("Who is this?");
+		if (h.contentEquals("Jack")) {
+			JOptionPane.showMessageDialog(null, "You are correct!");
+			score+=1;
+		} else {
+			JOptionPane.showMessageDialog(null, "You are wrong!");
+			System.out.println("This is Jack.");
+		}
+		System.out.println("Your score is " + score);
 		// 9. Show them their current score
 
 	}
