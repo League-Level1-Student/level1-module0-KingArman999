@@ -7,16 +7,17 @@ import java.util.Random;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 public class CutenessTV implements ActionListener {
+	JFrame frame = new JFrame();
+	JPanel panel = new JPanel();
+	  JButton duckbutton = new JButton();
+	  JButton frogbutton = new JButton();
+	  JButton unicornbutton = new JButton();
 	public void showButton() {
-		JFrame frame = new JFrame();
-		JPanel panel = new JPanel();
-		  JButton duckbutton = new JButton();
-		  JButton frogbutton = new JButton();
-		  JButton unicornbutton = new JButton();
 		  frame.add(panel);
 		  frame.setVisible(true);
 		    panel.add(duckbutton);
@@ -29,7 +30,7 @@ public class CutenessTV implements ActionListener {
 		    duckbutton.addActionListener(this);
 		    frogbutton.addActionListener(this);
 		    unicornbutton.addActionListener(this);
-		    
+		    frame.pack();
 }
 void showDucks() {
     playVideo("https://www.youtube.com/watch?v=MtN1YnoL46Q");
@@ -55,5 +56,13 @@ void playVideo(String videoID) {
 public void actionPerformed(ActionEvent e) {
 	// TODO Auto-generated method stub
 e.getSource();
+JButton buttonPressed = (JButton) e.getSource();
+if (buttonPressed==duckbutton) {
+	showDucks();
+	}else if(buttonPressed==frogbutton) {
+	showFrog();
+	}else {
+		showFluffyUnicorns();}
 }
 }
+

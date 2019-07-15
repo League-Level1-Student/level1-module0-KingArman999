@@ -21,7 +21,7 @@ import javax.swing.JPanel;
 public class DrumKit implements MouseListener {
 
 	JLabel drumLabelWithImage;
-
+	JLabel drumClicked;
 	public void run() throws MalformedURLException {
 
 		// 1. Make a JFrame variable and initialize it using "new JFrame()"
@@ -42,10 +42,10 @@ public class DrumKit implements MouseListener {
 		// Eclipse project under "default package".
 		
 		// 8. Put the name of your image file in a String variable.
-		String drum = "EpicBruhMoment.jpg";
+		String snare = "snare.jpg";
 		// 9. Edit the next line to use your String variable
 		// drumLabelWithImage = createLabelImage(drumImageString);
-		drumLabelWithImage = createLabelImage(drum);
+		drumLabelWithImage = createLabelImage(snare);
 		// 10. Add the image to the panel
 		panel.add(drumLabelWithImage);
 		// 11. Set the layout of the panel to "new GridLayout()"
@@ -54,7 +54,7 @@ public class DrumKit implements MouseListener {
 		// your drum image?
 		frame.pack();
 		// 13. add this mouse listener to drumLabelWithImage
-		
+		drumLabelWithImage.addMouseListener(this);
 		// 18. Add more images to make a drumkit. Remember to add this mouse
 		// listener to each one.
 
@@ -63,17 +63,17 @@ public class DrumKit implements MouseListener {
 	public void mouseClicked(MouseEvent e) {
 		// 14. Print "mouse clicked" to the console. Run your program and watch
 		// the console to see when this is printed.
-
-		JLabel drumClicked = (JLabel) e.getSource(); // This line gets the label
-														// that the mouse
-														// clicked on
+		 drumClicked = (JLabel) e.getSource(); 							// This line gets the label
+		 	System.out.println("mouse clicked");						// that the mouse clicked on
 
 		// 15. Download a drum sound and drop it into your "default package".
 		// You can find it on freesound.org. To download it, log in as
 		// leagueofamazing/code4life.
 
 		// 16. If they clicked on the drumImage...
-
+			if (drumClicked==drumLabelWithImage) {
+				playSound("drum.wav");	
+			}
 		// 17. ...use the playSound method to play a drum sound. Test to see if
 		// it works
 
@@ -98,25 +98,24 @@ public class DrumKit implements MouseListener {
 	@Override
 	public void mousePressed(MouseEvent e) {
 		// TODO Auto-generated method stub
-
+		
 	}
 
 	@Override
 	public void mouseReleased(MouseEvent e) {
 		// TODO Auto-generated method stub
-
+		
 	}
 
 	@Override
 	public void mouseEntered(MouseEvent e) {
 		// TODO Auto-generated method stub
-
+		
 	}
 
 	@Override
 	public void mouseExited(MouseEvent e) {
 		// TODO Auto-generated method stub
-
+		
 	}
-
 }
