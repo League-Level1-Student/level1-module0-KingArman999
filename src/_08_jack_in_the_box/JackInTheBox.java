@@ -29,7 +29,8 @@ public class JackInTheBox implements ActionListener {
 		// TODO Auto-generated method stub
 		JButton buttonPressed = (JButton) e.getSource();
 		if (buttonPressed==button) {
-			clicks =+ 1;
+			System.out.println("Pressed!");
+			clicks += 1;
 		} 
 		if (clicks == 5) {
 			showPicture("jackInTheBox.png");
