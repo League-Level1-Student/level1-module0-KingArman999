@@ -34,7 +34,7 @@ public class JackInTheBox implements ActionListener {
 		} 
 		if (clicks == 5) {
 			showPicture("jackInTheBox.png");
-			playSound("home-woohoo.wav");
+			playSound("homer-woohoo.wav");
 		}
 }
 	private void showPicture(String fileName) { 

@@ -11,10 +11,11 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 public class DuelingButtons implements ActionListener {
-
+	int clicks = 0;
 	JButton leftButton = new JButton();
 	JButton rightButton = new JButton();
 
@@ -62,6 +63,12 @@ frame.setTitle("Demanding Buttons");
 			leftButton.setPreferredSize(BIG);
 			rightButton.setPreferredSize(SMALL);
 			rightButton.setText("Click Me!");
+			if (buttonPressed==leftButton) {
+				clicks+=1;
+			}
+			if (clicks== 10) {
+				JOptionPane.showMessageDialog(null, "Chill");
+			}
 		}
 		/* If the buttonPressed was the leftButton.... */
 		// Set the text of the rightButton to "No, click Me!"
